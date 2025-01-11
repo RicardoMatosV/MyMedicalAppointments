@@ -12,16 +12,20 @@ public class Main {
         //Ahora solo consideramos mostrar menu
 //        showMenu();
 
+        //Se crea el objeto myDoctor de Clase Doctor
         Doctor myDoctor = new Doctor("Carlo Ancceloti","cancceloti@xmail.com");
         //Se añade nueva cita al doctor de myDoctor
         myDoctor.addAvailableAppointment(new Date(), "04:00pm");
         myDoctor.addAvailableAppointment(new Date(), "10:00am");
         myDoctor.addAvailableAppointment(new Date(), "01:00pm");
 
+        //Se ordena que imprima los datos de myDoctor de Clase Doctor, imprimirá con la sobreescritura a los toString() de la Clase Principal y la Clase Anidada
+        System.out.println(myDoctor);
+
         //Se un for each para imprimir todas las citas guardadas en el ArrayList usando su getter
-        for (Doctor.AvailableAppointment aA: myDoctor.getAvailableAppointments()) {
+       /* for (Doctor.AvailableAppointment aA: myDoctor.getAvailableAppointments()) {
             System.out.println(aA.getDate() + " " + aA.getTime());
-        }
+        }*/
 
         System.out.println("\n");
         Patient patient = new Patient("Marcelo Andrade","mandrade@xmail.com");

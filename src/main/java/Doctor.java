@@ -32,6 +32,12 @@ public class Doctor extends User { //Se aplica Herencia a la Clase padre User
         return availableAppointments;
     }
 
+    @Override
+    public String toString() { //Sobreescribiendo toString() de la Clase Doctor
+        return super.toString() + "\nSpeciality: " + speciality +
+                "\nAvailable: " + availableAppointments.toString(); //Se indica que imprima los datos de la Clase Anidada availableAppointments
+    }
+
     //Definiendo la Clase Estática Anidada
     public static class AvailableAppointment {
         private int id;
@@ -65,6 +71,12 @@ public class Doctor extends User { //Se aplica Herencia a la Clase padre User
 
         public void setTime(String time) {
             this.time = time;
+        }
+
+        @Override
+        public String toString() { //Sobreescribiendo toString() de la Clase Anidada AvailableAppointment
+            return "\nAvailable Appointments \nDate: " + date +
+                    "\nTime: " + time;
         }
     }
 }
