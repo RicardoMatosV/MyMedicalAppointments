@@ -8,6 +8,8 @@ import java.util.Date;
 public class Doctor extends User { //Se aplica Herencia a la Clase padre Model.User
     //Atributos
     private String speciality;
+    //Se define un Array dinamica para guardar las citas
+    private ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
 
     //Constructor parametrizado
     public Doctor(String name, String email){
@@ -29,8 +31,7 @@ public class Doctor extends User { //Se aplica Herencia a la Clase padre Model.U
         this.speciality = speciality;
     }
 
-    //Se define un Array dinamica para guardar las citas
-    ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
+
     //Se crea un metodo para añadir una nueva cita al Array
     public void addAvailableAppointment(String date, String time){
         availableAppointments.add(new Doctor.AvailableAppointment(date,time));
@@ -70,11 +71,11 @@ public class Doctor extends User { //Se aplica Herencia a la Clase padre Model.U
             this.id = id;
         }
 
-        public Date getDate() {
+        public Date getDate(String DATE) {
             return date;
         }
 
-        public String getDate(String DATE) {
+        public String getDate() {
             return format.format(date);
         }
 
