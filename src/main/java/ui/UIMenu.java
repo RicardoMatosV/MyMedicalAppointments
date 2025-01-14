@@ -1,4 +1,5 @@
 package ui;
+
 import java.util.Scanner;
 
 public class UIMenu {
@@ -12,8 +13,8 @@ public class UIMenu {
 
         int response = 0;
         do{
-            System.out.println("1. Doctor");
-            System.out.println("2. Patient");
+            System.out.println("1. Model.Doctor");
+            System.out.println("2. Model.Patient");
             System.out.println("0. Salir");
 
             Scanner sc = new Scanner(System.in);
@@ -21,7 +22,7 @@ public class UIMenu {
 
             switch (response){
                 case 1:
-                    System.out.println("Doctor");
+                    System.out.println("Model.Doctor");
                     break;
                 case 2:
                     response = 0;
@@ -40,7 +41,7 @@ public class UIMenu {
         int response = 0;
         do{
             System.out.println("\n\n");
-            System.out.println("Patient");
+            System.out.println("Model.Patient");
             System.out.println("1. Book an appointment");
             System.out.println("2. My appointment");
             System.out.println("0. Return");

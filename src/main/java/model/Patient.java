@@ -1,4 +1,6 @@
-public class Patient extends User{ //Se aplica Herencia a la Clase padre User
+package model;
+
+public class Patient extends User{ //Se aplica Herencia a la Clase padre Model.User
     //Atributos
     private String birthday;
     private String blood;
@@ -6,8 +8,8 @@ public class Patient extends User{ //Se aplica Herencia a la Clase padre User
     private Double height;
 
     //Constructor parametrizado usando la Clase Padre
-    Patient(String name, String email){
-        super(name,email); //Metodo constructor de la Clase User
+    public Patient(String name, String email){
+        super(name,email); //Metodo constructor de la Clase Model.User
     }
 
     //54.5
@@ -51,5 +53,12 @@ public class Patient extends User{ //Se aplica Herencia a la Clase padre User
                 "\nWeight: " + getWeight() +
                 "\nHeight: " + getHeight() +
                 "\nBlood: " + blood;
+    }
+
+    //Especificación de lo que va a hacer el Metodo Abstracto heredado
+    @Override
+    public void showDataUser() {
+        System.out.println("Paciente");
+        System.out.println("Historial completo desde nacimiento");
     }
 }
