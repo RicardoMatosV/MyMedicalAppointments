@@ -1,10 +1,9 @@
-//Import de elementos static de la clase Math
-import java.sql.SQLOutput;
-
-import static java.lang.Math.*;
+import model.Doctor;
+import model.ISchedulable;
+import model.Patient;
+import model.User;
 
 //Import de elementos static de la clase UIMenu del package ui
-import static ui.UIMenu.*;
 import java.util.Date;
 
 public class Main {
@@ -34,9 +33,28 @@ public class Main {
         System.out.println(patient2);
         System.out.println(myDoctor);
 
+        User user = new Doctor("Alonso Cuaron", "acuaron@xmail.com");
+        user.showDataUser(); //El objeto User se está comportando como el objeto Doctor
+
+        User userPat = new Patient("Luis Juvenal", "ljuvenal@xmail.com");
+        System.out.println();
+        userPat.showDataUser(); //El objeto User se está comportando como el objeto Patient
+
+        //Aplicando el concepto de Clases Anónimas, ya que User viene a ser una Clase Abstracta
+        User user1 = new User("Leandro Martínez", "lmartinez@xmail.com") {
+            @Override
+            public void showDataUser() { //Aquí puedo darle el comportamiento quiera en este momento
+                System.out.println("\nDoctor");
+                System.out.println("Hospital: Cruz Verde");
+                System.out.println("Departamento: Geriatría");
+            }
+        };
+
+        user1.showDataUser();
+
      /*   System.out.println("\n");
-        Patient patient = new Patient("Susan","susan@xmail.com");
-        Patient patient2 = new Patient("Lorena","lorena@xmail.com");
+        Model.Patient patient = new Model.Patient("Susan","susan@xmail.com");
+        Model.Patient patient2 = new Model.Patient("Lorena","lorena@xmail.com");
 
         System.out.println(patient.getName());
         System.out.println(patient2.getName());

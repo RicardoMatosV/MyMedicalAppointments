@@ -1,4 +1,6 @@
-public class User { //Vendría a ser una Clase padre
+package model;
+
+public abstract class User { //Vendría a ser una Clase padre
     private int id;
     private String name;
     private String email;
@@ -60,4 +62,7 @@ public class User { //Vendría a ser una Clase padre
         return "User: " + name + ", Email: " + email +
                 "\nAddress: " + address + ", Phone: " + phoneNumber;
     }
+
+    //Declaración del Metodo Abstracto
+    public abstract void showDataUser();
 }

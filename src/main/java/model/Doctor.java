@@ -1,16 +1,24 @@
-import java.sql.SQLOutput;
+package model;
+
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Doctor extends User { //Se aplica Herencia a la Clase padre User
+public class Doctor extends User { //Se aplica Herencia a la Clase padre Model.User
     //Atributos
     private String speciality;
 
     //Constructor parametrizado
-    Doctor(String name, String email){
+    public Doctor(String name, String email){
         super(name, email); //El contructor padre siempre debe estar al inicio en el contructor hijo
         System.out.println("El nombre del Doctor asigando es: " + name);
         this.speciality = speciality;
+    }
+
+    //Especificación de lo que va a hacer el Metodo Abstracto heredado
+    @Override
+    public void showDataUser() {
+        System.out.println("Empleado del Hospital: Cruz Roja");
+        System.out.println("Departamento: Oncología");
     }
 
     public String getSpeciality() {
