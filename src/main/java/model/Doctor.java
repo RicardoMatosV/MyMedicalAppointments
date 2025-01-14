@@ -1,5 +1,7 @@
 package model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -32,7 +34,7 @@ public class Doctor extends User { //Se aplica Herencia a la Clase padre Model.U
     //Se define un Array dinamica para guardar las citas
     ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
     //Se crea un metodo para añadir una nueva cita al Array
-    public void addAvailableAppointment(Date date, String time){
+    public void addAvailableAppointment(String date, String time){
         availableAppointments.add(new Doctor.AvailableAppointment(date,time));
     }
     //Se creo un getter para mostrar todas las citas guardadas en el Array (se muestra las direcciones de memoria)
@@ -51,9 +53,14 @@ public class Doctor extends User { //Se aplica Herencia a la Clase padre Model.U
         private int id;
         private Date date;
         private String time;
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 
-        public AvailableAppointment(Date date, String time){
-            this.date = date;
+        public AvailableAppointment(String date, String time){
+            try {
+                this.date = format.parse(date);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
             this.time = time;
         }
 
@@ -67,6 +74,10 @@ public class Doctor extends User { //Se aplica Herencia a la Clase padre Model.U
 
         public Date getDate() {
             return date;
+        }
+
+        public String getDate(String DATE) {
+            return format.format(date);
         }
 
         public void setDate(Date date) {
