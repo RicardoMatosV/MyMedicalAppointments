@@ -12,8 +12,6 @@ public class Doctor extends User { //Se aplica Herencia a la Clase padre Model.U
     //Constructor parametrizado
     public Doctor(String name, String email){
         super(name, email); //El contructor padre siempre debe estar al inicio en el contructor hijo
-        System.out.println("El nombre del Doctor asigando es: " + name);
-        this.speciality = speciality;
     }
 
     //Especificación de lo que va a hacer el Metodo Abstracto heredado
