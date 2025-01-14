@@ -53,9 +53,9 @@ public class UIMenu {
 
         //Simulando una Base de Datos de usuarios Doctor y Patient
         ArrayList<Doctor> doctors = new ArrayList<>();
-        doctors.add(new Doctor("Alejando Martinelli", "amartinelli@xgmail.com"));
-        doctors.add(new Doctor("Karen Soza", "ksoza@xgmail.com"));
-        doctors.add(new Doctor("Rocío Gómez", "rgomez@xgmail.com"));
+        doctors.add(new Doctor("Alejando Martinelli", "amartinelli@xmail.com"));
+        doctors.add(new Doctor("Karen Soza", "ksoza@xmail.com"));
+        doctors.add(new Doctor("Rocío Gómez", "rgomez@xmail.com"));
 
         ArrayList<Patient> patients = new ArrayList<>();
         patients.add(new Patient("Julián Toribio","jtoribio@xmail.com"));
@@ -73,7 +73,7 @@ public class UIMenu {
                         emailCorrect = true;
                         //Obtener el usuario logeado
                         doctorLogged = d;
-                        //showDoctorMenu
+                        UIDoctorMenu.showDoctorMenu();
                     }
                 }
             }

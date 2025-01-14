@@ -24,6 +24,7 @@ public class UIDoctorMenu {
 
             switch (response){
                 case 1:
+                    showAddAvailableAppointmentsMenu();
                     break;
                 case 2:
                     break;
@@ -35,7 +36,7 @@ public class UIDoctorMenu {
         }while (response != 0);
     }
 
-    private static void showAddAvailableAppointment(){
+    private static void showAddAvailableAppointmentsMenu(){
         int response = 0;
         do{
             System.out.println();
@@ -66,7 +67,7 @@ public class UIDoctorMenu {
                 int responseTime = 0;
                 String time = "";
                 do {
-                    System.out.println("Insert the time available for date: " + date + "[hh:mm]");
+                    System.out.println("Insert the time available for date: " + date + " [hh:mm]");
                     time = sc.nextLine();
                     System.out.println("Your time is: " + time + "\n1. Correct \n2. Change Date");
                     responseTime = Integer.valueOf(sc.nextLine());
