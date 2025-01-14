@@ -46,7 +46,7 @@ public class Main {
             public void showDataUser() { //Aquí puedo darle el comportamiento quiera en este momento
                 System.out.println("\nDoctor");
                 System.out.println("Hospital: Cruz Verde");
-                System.out.println("Departamento: Pediatría");
+                System.out.println("Departamento: Oncología");
             }
         };
 
