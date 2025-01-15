@@ -14,7 +14,7 @@ public class UIPatientMenu {
         do {
             System.out.println("\n\n");
             System.out.println("\nPatient");
-            System.out.println("Welcome: " + UIMenu.patientLogged);
+            System.out.println("Welcome: " + UIMenu.patientLogged.getName());
             System.out.println("1. Book an appointment");
             System.out.println("2. My Appointments");
             System.out.println("0. Logout");
@@ -27,6 +27,7 @@ public class UIPatientMenu {
                     showBookAppointmentMenu();
                     break;
                 case 2:
+                    showPatientMyAppointments();
                     break;
                 case 0:
                     UIMenu.showMenu();
@@ -78,7 +79,7 @@ public class UIPatientMenu {
                 doctorSelected = doc.getValue();
             }
 
-            System.out.println(doctorSelected.getName() +
+            System.out.println("Doctor: " + doctorSelected.getName() +
                     ". Date: " + doctorSelected.getAvailableAppointments().get(indexDate).getDate() +
                     ". Time: " + doctorSelected.getAvailableAppointments().get(indexDate).getTime());
 
